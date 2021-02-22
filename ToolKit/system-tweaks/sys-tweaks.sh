@@ -11,7 +11,6 @@ echo -e "\e[32m6.3C All-in-One Toolbox\e[0m "
 echo -e "\e[32m7.Wifi-Toolbox\e[0m "
 echo -e "\e[32m8.Battery-Guru\e[0m "
 echo -e "\e[32m9.Updated-Webview\e[0m "
-echo -e "\e[32m10.Restore-Old-Webview\e[0m "
 echo -e "\e[32mh.what are theses apks?/help??\e[0m "
 read -p "choose an option : " choice
 
@@ -109,17 +108,6 @@ rm -rf /system/priv-app/webview/webview.apk
 cp /data/.ToolKit/system-tweaks/webview.apk /system/priv-app/webview/
 chmod 777 /system/priv-app/webview/webview.apk
 reboot
-fi
-
-if [ $choice = 10 ]
-then
-echo Restoring Stock WebView
-rm -rf /system/priv-app/webview/webview.apk
-cp  /data/.ToolKit/webviewbak/webview.apk /system/priv-app/webview/
-chmod 777 /system/priv-app/webview/webview.apk
-reboot
-
-echo done!
 fi
 
 if [ $choice = h ]
