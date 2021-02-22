@@ -35,6 +35,9 @@ mkdir /system/app/LeenaLauncher
 cp /data/.ToolKit/customization/leena.apk /system/app/LeenaLauncher/
 chmod 777 /system/app/LeenaLauncher/leena.apk
 chmod +x /system/app/LeenaLauncher/leena.apk
+echo "To chage the ui from zoomed it tablet ui to desktop ui click the blue paper plane icon
+then scroll down to find a app named change ui click it once to change the ui to desktop look."
+
 reboot
 fi
 
