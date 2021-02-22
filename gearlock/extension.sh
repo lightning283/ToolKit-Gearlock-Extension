@@ -3,13 +3,11 @@
 if [[ ! -f /data/.ToolKit/webviewbak/webview.apk ]]
 then
 figlet Initializing
-cp /system/framework/framework-res.apk /data/.ToolKit/frameworkbak/
 cp /system/priv-app/webview/webview.apk /data/.ToolKit/webviewbak/
 cp /system/fonts/* /data/.ToolKit/customization/baks/stockfonts/fonts/
 fi
 
 gsudo
-clear
 echo ======================Main-Menu===========================
 figlet ToolKit
 echo -e "\e[32m1.Game-Tweaks\e[0m "
