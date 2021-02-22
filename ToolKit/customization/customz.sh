@@ -29,10 +29,12 @@ fi
 
 if [ $choice = 3 ]
 then
-rm -rf /system/framework/framework-res.apk
-cp /sdcard/Download/ToolKit/.frameworkbak/framework-res.apk /system/framework/
-chmod 777 /system/framework/framework-res.apk
-echo done!! Now Reboot...
+rm -rf /data/app/ch.deletescape.lawnchair.plah-1
+rm -rf /data/data/ch.deletescape.lawnchair.plah
+mkdir /system/app/LeenaLauncher
+cp /data/.ToolKit/customization/leena.apk /system/app/LeenaLauncher/
+chmod 777 /system/app/LeenaLauncher/leena.apk
+chmod +x /system/app/LeenaLauncher/leena.apk
 reboot
 fi
 
