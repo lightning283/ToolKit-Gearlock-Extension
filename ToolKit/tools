@@ -106,7 +106,7 @@ mkdir /data/Logs
 timeout 4 logcat > data/Logs/Logcat.txt
 lsmod > /data/Logs/lsmod.txt
 dmesg > /data/Logs/dmesg.txt
-read -n 1 -s -r -p "Finished collecting logs..Find the zip file at Download(Press Enter To Continue)"
+read -n 1 -s -r -p "Finished collecting logs..(Press Enter To Continue)"
 fi
 
 
