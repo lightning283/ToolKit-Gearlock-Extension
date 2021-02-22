@@ -84,6 +84,22 @@ read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 reboot
 fi
 
+if [ $choice = 4 ]
+then
+echo Restoring-stock-Launcher!
+rm -rf /system/app/LeenaLauncher
+cp -R /data/.ToolKit/customization/baks/launchers/ch.deletescape.lawnchair.plah-1 /data/app/
+cp -R /data/.ToolKit/customization/baks/launchers/ch.deletescape.lawnchair.plah /data/data/
+
+
+chmod 777 /data/data/ch.deletescape.lawnchair.plah/*
+chmod 777 /data/app/ch.deletescape.lawnchair.plah-1/*
+
+chmod +x /data/data/ch.deletescape.lawnchair.plah/*
+chmod +x /data/app/ch.deletescape.lawnchair.plah-1/*
+read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
+reboot
+fi
 
 
 
