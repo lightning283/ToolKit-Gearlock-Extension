@@ -48,8 +48,6 @@ clear
 figlet Restore
 echo -e "\e[32m1.Restore Stock Web-view\e[0m "
 echo -e "\e[32m2.Restore Stock Framework/cursor\e[0m "
-echo -e "\e[32m3.Restore stock Fonts\e[0m "
-#echo -e "\e[32m4.----\e[0m "
 read -p "choose an option : " choice
 
 
