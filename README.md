@@ -3,3 +3,6 @@ A Gearlock Extension For Android-X86,That can Help In Some App/Game Crashes,And 
 
 ---I Post Updated/gxp version here:--
 https://supreme-gamers.com/r/toolkit.83/
+
+# Authors
+N-narendra aka Ghost and LIGHTNING283
