@@ -28,7 +28,7 @@ read -p "Choose an Option : " choicewget
 if [ $choicewget = 1 ]
 then
 cd /data/.ToolKit/apks/
-wget http://download1081.mediafire.com/ua3fp177k23g/rg99c6bptj52mdu/apks.zip
+axel https://dl.dropbox.com/s/v1dzzcr52u572a2/apks.zip?dl=1
 unzip apks.zip
 rm -rf apks.zip
 read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
