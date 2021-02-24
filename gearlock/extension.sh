@@ -18,7 +18,8 @@ echo -e "\e[32m4.Customization\e[0m "
 echo -e "\e[32m5.Restore\e[0m "
 echo -e "\e[32m6.FileManager-(Terminal)\e[0m "
 echo -e "\e[32m7.Get-Logs(Logcat.lsmod..)\e[0m "
-echo -e "\e[32m8.exit??\e[0m "
+echo -e "\e[32m8.Install-packages\e[0m "
+echo -e "\e[32m9.exit??\e[0m "
 read -p "choose an option : " choice
 if [ $choice = 1 ]
 
@@ -121,8 +122,12 @@ dmesg > /data/Logs/dmesg.txt
 read -n 1 -s -r -p "Finished collecting logs..(Press Enter To Continue)"
 fi
 
-
 if [ $choice = 8 ]
+then
+bash /data/.ToolKit/wget.sh
+fi
+
+if [ $choice = 9 ]
 
 then
 exit
