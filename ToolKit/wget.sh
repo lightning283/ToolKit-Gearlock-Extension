@@ -92,7 +92,7 @@ then
  if [ $choicewget3 = 1 ]
  then
  cd /data/.ToolKit/customization/
- wget http://download940.mediafire.com/bxz51oc8ogvg/qv6d3klvfa9o0fn/customization.zip
+ axel https://dl.dropbox.com/s/m8j404iuqcfbp1a/customization.zip?dl=1
  unzip customization.zip
  rm -rf customization.zip
  read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
