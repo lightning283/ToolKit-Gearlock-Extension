@@ -99,6 +99,7 @@ then
  then
  bash /data/.ToolKit/tools.sh
  fi
+ fi
 
 if [ $choice = 4 ]
 then
