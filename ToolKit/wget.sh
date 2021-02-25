@@ -124,6 +124,7 @@ if [ $choicewget4 = 2 ]
 then
 bash /data/.ToolKit/tools.sh
 fi
+fi
 if [ $choice = 5 ]
 then
 bash /data/.ToolKit/tools.sh
