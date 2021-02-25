@@ -8,6 +8,7 @@ cp /system/fonts/* /data/.ToolKit/customization/baks/stockfonts/fonts/
 cp -R /data/app/ch.deletescape.lawnchair.plah-1 /data/.ToolKit/customization/baks/launcher/
 cp -R /data/data/ch.deletescape.lawnchair.plah /data/.ToolKit/customization/baks/launcher/
 fi
+clear
 gecpc Welcome
 figlet -w $(tput cols) -c "ToolKit"
 gecpc "TooLKit"; echo 
