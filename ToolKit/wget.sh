@@ -1,7 +1,6 @@
 clear
 figlet Install-PKG
 
-
 echo -e "\e[32m1.Essential-Apps--> Pack\e[0m "
 echo -e "\e[32m2.System-Tweak-Apks--> Pack\e[0m "
 echo -e "\e[32m3.Customization--> Pack\e[0m "
@@ -14,12 +13,11 @@ then
 echo "
 What Does This Package Have?
 
-*Etch Droid
-*GameGaurdian
-*LuckyPatcher
-*RootUninstaller
-*Terminal-Emulator 
-
+1.Etch Droid
+2.GameGaurdian
+3.LuckyPatcher
+4.RootUninstaller
+5.Terminal-Emulator 
 
 "
 
@@ -47,14 +45,13 @@ if [ $choice = 2 ]
 then
 echo "
 What Does This Pack Contain
-*3C-ToolBox
-*BatteryGURU
-*Kernel Auditor
-*L-Speed
-*New and Updated Webview--it may help In app crashes
-*Wifi-ToolBox
-*Greeniy
-
+1.3C-ToolBox
+2.BatteryGURU
+2.kernel Auditor
+3.L-Speed
+4.New and Updated Webview--It may Help In app Crashes.
+5.Wfif-ToolBox
+6.Greeniy
 
 "
 echo "Press '1' to Download...Press '2' to Go Back"
@@ -82,8 +79,8 @@ if [ $choice = 3 ]
 then
  echo "
  What Does This Pack Have?
- *Fonts
- *New Launchers
+ 1.nts
+ 2.w Launchers
  **Much More to come here**
 
  "
@@ -103,7 +100,29 @@ then
  bash /data/.ToolKit/tools.sh
  fi
 
+if [ $choice = 4 ]
+then
+echo "
+What Does This Pack Contain?
+1. DarkMatter-Exo4.6 Webview --This helps to fix crash issues.
 
+"
+echo "Press '1' to Download...Press '2' to Go Back"
+read -p "Choose an Option : " choicewget4
+if [ $choicewget4 = 1 ]
+then
+cd /data/.ToolKit/game-tweaks/
+axel
+unzip -q game-tweaks.zip
+rm -rf game-tweaks.zip
+read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
+bash /data/.ToolKit/tools.sh
+fi
+
+if [ $choicewget4 = 2 ]
+then
+bash /data/.ToolKit/tools.sh
+fi
 
 
 fi
