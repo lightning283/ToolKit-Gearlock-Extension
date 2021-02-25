@@ -5,7 +5,7 @@ echo -e "\e[32m1.Essential-Apps--> Pack\e[0m "
 echo -e "\e[32m2.System-Tweak-Apks--> Pack\e[0m "
 echo -e "\e[32m3.Customization--> Pack\e[0m "
 echo -e "\e[32m4.Pubgm-Fix--> Pack\e[0m "
-echo -e "\e[32m4.Back\e[0m "
+echo -e "\e[32m5.Back\e[0m "
 read -p "choose an option : " choice
 if [ $choice = 1 ]
 
@@ -124,6 +124,7 @@ if [ $choicewget4 = 2 ]
 then
 bash /data/.ToolKit/tools.sh
 fi
-
-
+if [ $choice = 5 ]
+then
+bash /data/.ToolKit/tools.sh
 fi
