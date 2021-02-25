@@ -15,9 +15,9 @@ clear
  geco "${GREEN}3.DArkMAtter4.6-webview//Method-3${RC}"
  geco "${GREEN}4.Back${RC}"
  echo -e "\e[93;1m"
- read -p "choose an option : " choice
+ read -p "choose an option : " choice1
  echo -e "\e[0m"
- if [ $choice = 1 ];then
+ if [ $choice1 = 1 ];then
  geco "for Pubg kr..\n"
 nout rm -rf /sdcard/Android/data/com.pubg.krmobile/files/ProgramBinaryCache
 nout touch  /sdcard/Android/data/com.pubg.krmobile/files/ProgramBinaryCache
@@ -28,7 +28,7 @@ nout touch  /sdcard/Android/data/com.tencent.ig/files/ProgramBinaryCache
  bash /data/.ToolKit/tools.sh
  fi
 
- if [ $choice = 2 ];then
+ if [ $choice1 = 2 ];then
  geco "For PUBG KR\n"
 nout rm -rf /data/data/com.pubg.krmobile/app_webview/webview_data.lock
 nout mkdir -p /data/data/com.pubg.krmobile/app_webview/webview_data.lock/
@@ -40,7 +40,7 @@ geco "For PUBG Global\n"
  fi
 
 
- if [ $choice = 3 ];then
+ if [ $choice1 = 3 ];then
 geco "Installing DarkMatter-EXo4.6 webview...!!\n"
 nout rm -r /system/priv-app/webview/webview.apk
 nout cp /data/.ToolKit/game-tweaks/webview.apk /system/priv-app/webview/
@@ -51,7 +51,7 @@ reboot
 fi
 
 
- if [ $choice = 4 ];then
+ if [ $choice1 = 4 ];then
  bash /data/.ToolKit/tools.sh
 fi
  fi
