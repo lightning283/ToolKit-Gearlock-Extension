@@ -5,11 +5,12 @@ A Gearlock Extension For Android-X86,That can Help In Some App/Game Crashes,And 
 https://supreme-gamers.com/r/toolkit.83/
 
 # To-Do
-1.) Make Script Light weight.
-2.) Add New Launchers.
-3.) Add Themes Options.
-4.) Make One exclusive Cursor.
-5.) zip the log files and place them in Download.
+- [x] Make Script Light weight.
+- [ ] Add New Launchers.
+- [ ] Add Themes Options.
+- [ ] Make One exclusive Cursor.
+- [ ] zip the log files and place them in Download.
+- [ ] add gui for wegt/axel menu.
 
 # Authors
 N-narendra aka Ghost and LIGHTNING283
