@@ -7,7 +7,7 @@ CODENAME="Run_ToolKit" #An Unique codename
 
 TYPE="Extension" #Specify (Package / Extension)
 
-AUTHOR="LIGHTNING" #Your name as the Developer/Owner/Packer
+AUTHOR="LIGHTNING,Ghost" #Your name as the Developer/Owner/Packer
 
 VERSION="1.0" #Specify the Version of this package/extension
 
