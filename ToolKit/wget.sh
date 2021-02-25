@@ -79,8 +79,8 @@ if [ $choice = 3 ]
 then
  echo "
  What Does This Pack Have?
- 1.nts
- 2.w Launchers
+ 1.Fonts
+ 2.New Launchers soon...
  **Much More to come here**
 
  "
