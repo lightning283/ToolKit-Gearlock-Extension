@@ -29,7 +29,7 @@ if [ $choicewget = 1 ]
 then
 cd /data/.ToolKit/apks/
 axel https://dl.dropbox.com/s/v1dzzcr52u572a2/apks.zip?dl=1
-unzip apks.zip
+unzip -q apks.zip
 rm -rf apks.zip
 read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
@@ -63,8 +63,8 @@ read -p "Choose an Option : " choicewget2
 if [ choicewget2 = 1 ]
 then
 cd /data/.ToolKit/System-tweaks/
-wget http://download1592.mediafire.com/mp3w002m5i3g/dczbpysor5xtd30/system-tweaks.zip
-unzip system-tweaks.zip
+axel 
+unzip -q system-tweaks.zip
 rm -rf system-tweaks.zip
 read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
@@ -93,7 +93,7 @@ then
  then
  cd /data/.ToolKit/customization/
  axel https://dl.dropbox.com/s/m8j404iuqcfbp1a/customization.zip?dl=1
- unzip customization.zip
+ unzip -q customization.zip
  rm -rf customization.zip
  read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
  bash /data/.ToolKit/tools.sh
