@@ -6,7 +6,7 @@ geco "Need To Customize eh...?\n"
 geco "${GREEN}1.New Font + emojis${RC}"
 geco "${GREEN}2.Emojis-v2${RC}"
 geco "${GREEN}3.Leena Launcher${RC}\n"
-echo -e "\e[93;1mm"
+echo -e "\e[93;1m"
 read -p "choose an option : " choice
 echo -e "\e[0m"
 
