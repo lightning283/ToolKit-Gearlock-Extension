@@ -42,9 +42,9 @@ geco "For PUBG Global\n"
 
  if [ $choice = 3 ];then
 geco "Installing DarkMatter-EXo4.6 webview...!!\n"
-noutrm -r /system/priv-app/webview/webview.apk
+nout rm -r /system/priv-app/webview/webview.apk
 nout cp /data/.ToolKit/game-tweaks/webview.apk /system/priv-app/webview/
- chmod 777 /system/priv-app/webview/webview.apk
+chmod 777 /system/priv-app/webview/webview.apk
 geco "done..!"
 sleep 1
 reboot
