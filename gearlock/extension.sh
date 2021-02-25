@@ -43,6 +43,7 @@ figlet -w $(tput cols) -c "Restore"
 gecpc "@__@"; echo 
 geco "${GREEN}1.Restore Stock Web-view${RC}"
 geco "${GREEN}2.Restore Stock Framework/cursor${RC}"
+geco "${GREEN}2.Restore Stock Fonts${RC}"
 echo -e "\e[93;1m"
 read -p "choose an option : " choice
 echo -e "\e[0m"
@@ -58,7 +59,7 @@ reboot
 fi
 
 if [ $choice = 2 ];then
-geco Restoring-stock-webview!
+geco Restoring-stock-Framework!
 rm -rf /system/framework/framework-res.apk
 cp /data/.ToolKit/frameworkbak/framework-res.apk /system/framework/
 chmod 777 /system/framework/framework-res.apk
