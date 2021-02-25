@@ -11,8 +11,8 @@ read -p "choose an option : " choice
 echo -e "\e[0m"
 
 if [ $choice = 1 ];then
-nout rm -rf /system/fonts/*
-nout cp data/.ToolKit/customization/fonts/* /system/fonts/
+rm -rf /system/fonts/*
+cp data/.ToolKit/customization/fonts/* /system/fonts/
 chmod 777 /system/fonts/*
 chmod +x /system/fonts/*
 sleep 1
