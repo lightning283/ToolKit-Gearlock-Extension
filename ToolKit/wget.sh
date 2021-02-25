@@ -1,5 +1,5 @@
 clear
-figlet Install-PKG
+figlet -c Install-PKG
 
 echo -e "\e[32m1.Essential-Apps--> Pack\e[0m "
 echo -e "\e[32m2.System-Tweak-Apks--> Pack\e[0m "
