@@ -9,7 +9,7 @@ TYPE="Extension" #Specify (Package / Extension)
 
 AUTHOR="LIGHTNING,Ghost" #Your name as the Developer/Owner/Packer
 
-VERSION="1.0" #Specify the Version of this package/extension
+VERSION="2.0" #Specify the Version of this package/extension
 
 SHORTDESC="Has some Pubgm-tweak-tools and also some tewaks for app/game crashes.." #Provide a short description about this package/extension
 
