@@ -95,9 +95,7 @@ read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 sleep 1
 reboot
 fi
-
-
-
+#end of $choice = 5 statement.
 fi
 
 if [ $choice = 6 ];then
