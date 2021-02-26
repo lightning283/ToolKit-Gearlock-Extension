@@ -43,7 +43,7 @@ figlet -w $(tput cols) -c "Restore"
 gecpc "@__@"; echo 
 geco "${GREEN}1.Restore Stock Web-view${RC}"
 geco "${GREEN}2.Restore Stock Framework/cursor${RC}"
-geco "${GREEN}2.Restore Stock Fonts${RC}"
+geco "${GREEN}3.Restore Stock Fonts${RC}"
 echo -e "\e[93;1m"
 read -p "choose an option : " choice
 echo -e "\e[0m"
