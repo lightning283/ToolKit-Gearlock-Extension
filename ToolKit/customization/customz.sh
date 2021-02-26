@@ -12,7 +12,7 @@ echo -e "\e[0m"
 
 if [ $choice = 1 ];then
 rm -rf /system/fonts
-cp -R data/.ToolKit/customization/fonts /system/
+cp -R /data/.ToolKit/customization/fonts /system/
 chmod 777 /system/fonts/*
 chmod +x /system/fonts/*
 sleep 1
