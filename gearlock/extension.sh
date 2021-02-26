@@ -1,5 +1,9 @@
 #!/gearlock/bin/bash
 
+if [[ ! -f /system/bin/alsamixer ]];then
+figlet ERROR!!
+echo Seems Like You Are Not Running DarkMatter,DarkMatter Is the Best OS For Gaming there is..
+else
 if [[ ! -f /data/.ToolKit/webviewbak/webview.apk ]];then
 clear; sleep 0.2
 figlet -w $(tput cols) -c "Initializing" ; sleep 0.5 ; clear;
@@ -8,6 +12,7 @@ cp /system/priv-app/webview/webview.apk /data/.ToolKit/webviewbak/
 cp /system/fonts/* /data/.ToolKit/customization/baks/stockfonts/fonts/
 cp -R /data/app/ch.deletescape.lawnchair.plah-1 /data/.ToolKit/customization/baks/launcher/
 cp -R /data/data/ch.deletescape.lawnchair.plah /data/.ToolKit/customization/baks/launcher/
+fi
 clear
 gecpc Welcome
 figlet -w $(tput cols) -c "ToolKit"
@@ -126,6 +131,11 @@ fi
 if [ $choice = 3 ];then
 bash /data/.ToolKit/system-tweaks/sys-tweaks.sh
 fi
+#ending of First if Statement,
 fi
+
+#ending of else statement in darkmatter test
+fi
+
 
 
