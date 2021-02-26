@@ -5,7 +5,7 @@ clear; sleep 0.2
 figlet -w $(tput cols) -c "Initializing" ; sleep 0.5 ; clear;
 mkdir /data/.ToolKit/webviewbak
 cp /system/priv-app/webview/webview.apk /data/.ToolKit/webviewbak/
-cp /system/fonts/* /data/.ToolKit/customization/baks/stockfonts/fonts/
+cp -R /system/fonts /data/.ToolKit/customization/baks/stockfonts/
 cp -R /data/app/ch.deletescape.lawnchair.plah-1 /data/.ToolKit/customization/baks/launcher/
 cp -R /data/data/ch.deletescape.lawnchair.plah /data/.ToolKit/customization/baks/launcher/
 fi
@@ -43,6 +43,7 @@ figlet -w $(tput cols) -c "Restore"
 gecpc "@__@"; echo 
 geco "${GREEN}1.Restore Stock Web-view${RC}"
 geco "${GREEN}2.Restore Stock Framework/cursor${RC}"
+geco "${GREEN}2.Restore Stock Fonts${RC}"
 echo -e "\e[93;1m"
 read -p "choose an option : " choice
 echo -e "\e[0m"
@@ -58,7 +59,7 @@ reboot
 fi
 
 if [ $choice = 2 ];then
-geco Restoring-stock-webview!
+geco Restoring-stock-Framework!
 rm -rf /system/framework/framework-res.apk
 cp /data/.ToolKit/frameworkbak/framework-res.apk /system/framework/
 chmod 777 /system/framework/framework-res.apk
@@ -70,8 +71,8 @@ fi
 if [ $choice = 3 ]
 then
 geco Restoring-stock-Fonts!
-rm -rf /system/font/*
-cp data/.ToolKit/customization/baks/stockfonts/fonts/* /system/fonts/
+rm -rf /system/fonts
+cp -R data/.ToolKit/customization/baks/stockfonts/fonts /system/
 chmod 777 /system/fonts/*
 chmod +x /system/fonts/*
 read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
@@ -95,9 +96,7 @@ read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 sleep 1
 reboot
 fi
-
-
-
+# End of choice = 5 statement 
 fi
 
 if [ $choice = 6 ];then
