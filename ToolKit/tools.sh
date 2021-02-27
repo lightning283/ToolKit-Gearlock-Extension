@@ -72,7 +72,7 @@ if [ $choice = 3 ]
 then
 geco Restoring-stock-Fonts!
 rm -rf /system/fonts
-cp -R data/.ToolKit/customization/baks/stockfonts/fonts /system/
+cp -R /data/.ToolKit/customization/baks/stockfonts/fonts /system/
 chmod 777 /system/fonts/*
 chmod +x /system/fonts/*
 read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
