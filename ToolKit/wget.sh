@@ -89,7 +89,7 @@ then
  if [ $choicewget3 = 1 ]
  then
  cd /data/.ToolKit/customization/
- axel https://dl.dropbox.com/s/m8j404iuqcfbp1a/customization.zip?dl=1
+ axel https://dl.dropbox.com/s/u79c5l1wal16owq/customization.zip?dl=1
  unzip -q customization.zip
  rm -rf customization.zip
  read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
