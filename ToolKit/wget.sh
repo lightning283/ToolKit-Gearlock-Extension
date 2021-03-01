@@ -94,6 +94,7 @@ then
  rm -rf customization.zip
  chmod 777 fonts
  chmod 777 fonts/*
+ touch /data/.ToolKit/customization/downloded.lightz
  read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
  bash /data/.ToolKit/tools.sh
  fi
