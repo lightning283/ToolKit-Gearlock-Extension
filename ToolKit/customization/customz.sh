@@ -20,6 +20,7 @@ chmod 777 /data/.ToolKit/customization/fonts/*
 cp /data/.ToolKit/customization/fonts/* /system/fonts/
 chmod 777 /system/fonts
 chmod 777 /system/fonts/*
+read -n 1 -s -r -p "DONE!!!------Press Enter To Continue"
 reboot
 fi
 
