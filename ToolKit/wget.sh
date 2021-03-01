@@ -1,11 +1,11 @@
 clear
 figlet -c Install-PKG
 
-echo -e "\e[32m1.Essential-Apps--> Pack\e[0m "
-echo -e "\e[32m2.System-Tweak-Apks--> Pack\e[0m "
-echo -e "\e[32m3.Customization--> Pack\e[0m "
-echo -e "\e[32m4.Pubgm-Fix--> Pack\e[0m "
-echo -e "\e[32m5.Back\e[0m "
+echo -e "\e[1;36m1.Essential-Apps--> Pack\e[0m "
+echo -e "\e[1;36m2.System-Tweak-Apks--> Pack\e[0m "
+echo -e "\e[1;36m3.Customization--> Pack\e[0m "
+echo -e "\e[1;36m4.Pubgm-Fix--> Pack\e[0m "
+echo -e "\e[1;36m5.Back\e[0m "
 read -p "choose an option : " choice
 if [ $choice = 1 ]
 
