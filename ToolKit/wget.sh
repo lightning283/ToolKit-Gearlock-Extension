@@ -5,7 +5,7 @@ echo -e "\e[1;36m1.Essential-Apps--> Pack\e[0m "
 echo -e "\e[1;36m2.System-Tweak-Apks--> Pack\e[0m "
 echo -e "\e[1;36m3.Customization--> Pack\e[0m "
 echo -e "\e[1;36m4.Pubgm-Fix--> Pack\e[0m "
-echo -e "\e[1;36m5.Back\e[0m "
+echo -e "\e[1;33m5.Back\e[0m "
 read -p "choose an option : " choice
 if [ $choice = 1 ]
 
