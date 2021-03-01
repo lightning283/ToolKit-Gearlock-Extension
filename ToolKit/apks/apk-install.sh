@@ -1,4 +1,16 @@
 #!/gearlock/bin/bash
+
+if [[ ! -f /data/.ToolKit/apks/downloded.lightz ]];then
+clear
+figlet -c ERROR
+echo -e "\e[31mERROR---> YOU HAVE NOT DOWNLOADED THE REQUIRED FILES\e[0m "
+read -n 1 -s -r -p "Download then From here----> Press Enter To Continue"
+bash /data/.ToolKit/wget.sh
+else
+
+
+
+
 clear
 geco "Choose the Apps you want to install\n"
 geco "${GREEN}1.Game-Gaurdian${RC}"
@@ -63,4 +75,7 @@ nout pm enable com.android.vending
 read -n 1 -s -r -p "Installed Terminal-Emulator--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
 geco "Done..!"
+fi
+
+
 fi
