@@ -12,8 +12,14 @@ echo -e "\e[0m"
 
 if [ $choice = 1 ];then
 rm -rf /system/fonts
-cp -R /data/.ToolKit/customization/fonts /system/
-chmod 644 /system/fonts/*
+mkdir /system/fonts
+chmod 777 /data/.ToolKit/customization/fonts
+chmod 777 /data/.ToolKit/customization/fonts/*
+
+
+cp /data/.ToolKit/customization/fonts/* /system/fonts/
+chmod 777 /system/fonts
+chmod 777 /system/fonts/*
 reboot
 fi
 
