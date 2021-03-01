@@ -73,8 +73,7 @@ then
 geco Restoring-stock-Fonts!
 rm -rf /system/fonts
 cp -R /data/.ToolKit/customization/baks/stockfonts/fonts /system/
-chmod 777 /system/fonts/*
-chmod +x /system/fonts/*
+chmod 644 /system/fonts/*
 read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 reboot
 sleep 1
@@ -87,8 +86,8 @@ cp -R /data/.ToolKit/customization/baks/launchers/ch.deletescape.lawnchair.plah-
 cp -R /data/.ToolKit/customization/baks/launchers/ch.deletescape.lawnchair.plah /data/data/
 
 
-chmod 777 /data/data/ch.deletescape.lawnchair.plah/*
-chmod 777 /data/app/ch.deletescape.lawnchair.plah-1/*
+chmod 644 /data/data/ch.deletescape.lawnchair.plah/*
+chmod 644 /data/app/ch.deletescape.lawnchair.plah-1/*
 
 chmod +x /data/data/ch.deletescape.lawnchair.plah/*
 chmod +x /data/app/ch.deletescape.lawnchair.plah-1/*
