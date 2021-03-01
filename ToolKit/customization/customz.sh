@@ -1,4 +1,14 @@
 #!/gearlock/bin/bash
+if [[ ! -f /data/.ToolKit/customization/downloded.lightz ]];then
+clear
+figlet -c ERROR
+echo -e "\e[31mERROR---> YOU HAVE NOT DOWNLOADED THE REQUIRED FILES\e[0m "
+read -n 1 -s -r -p "Download then From here----> Press Enter To Continue"
+bash /data/.ToolKit/wget.sh
+else
+
+
+
 
 clear; sleep 0.5;
 figlet -w $(tput cols) -c "Customization"; echo 
@@ -45,6 +55,7 @@ fi
 #sleep 1
 #reboot
 #fi
-
+#ending of file checking if statement
+fi
 
 
