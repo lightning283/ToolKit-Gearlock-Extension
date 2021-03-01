@@ -13,16 +13,14 @@ echo -e "\e[0m"
 if [ $choice = 1 ];then
 rm -rf /system/fonts
 cp -R /data/.ToolKit/customization/fonts /system/
-chmod 777 /system/fonts/*
-chmod +x /system/fonts/*
+chmod 644 /system/fonts/*
 reboot
 fi
 
 if [ $choice = 2 ];then
 nout rm -rf /system/fonts/NotoColorEmoji.ttf
 nout cp /data/.ToolKit/customization/emojis-v2/NotoColorEmoji.ttf /system/fonts/
-chmod 777 /system/fonts/*
-chmod +x /system/fonts/*
+chmod 644 /system/fonts/*
 sleep 1
 reboot
 fi
