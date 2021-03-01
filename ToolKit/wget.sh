@@ -29,6 +29,7 @@ cd /data/.ToolKit/apks/
 axel https://dl.dropbox.com/s/v1dzzcr52u572a2/apks.zip?dl=1
 unzip -q apks.zip
 rm -rf apks.zip
+touch downloded.lightz
 read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
 fi
@@ -63,6 +64,7 @@ cd /data/.ToolKit/System-tweaks/
 axel https://dl.dropbox.com/s/zzm6mawmllc89o5/system-tweaks.zip?dl=1
 unzip -q system-tweaks.zip
 rm -rf system-tweaks.zip
+touch downloded.lightz
 read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
 fi
