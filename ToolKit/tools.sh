@@ -102,7 +102,7 @@ fi
 if [ $choice = 6 ];then
 read -n 1 -s -r -p "To Exit FileManager Press F10 (Press Enter To Continue)"
 mc
-fi
+fihttps://github.com/LIGHTNING283/ToolKit-Gearlock-Extension/blob/main/gearlock/extension.sh
 
 if [ $choice = 7 ];then
 nout rm -rf data/Logs
