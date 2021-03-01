@@ -119,6 +119,7 @@ cd /data/.ToolKit/game-tweaks/
 axel https://dl.dropbox.com/s/czs0b7i3yca1s34/game-tweaks.zip?dl=1
 unzip -q game-tweaks.zip
 rm -rf game-tweaks.zip
+touch downloded.lightz
 read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
 fi
