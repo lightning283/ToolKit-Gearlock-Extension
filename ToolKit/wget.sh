@@ -92,6 +92,8 @@ then
  axel https://dl.dropbox.com/s/u79c5l1wal16owq/customization.zip?dl=1
  unzip -q customization.zip
  rm -rf customization.zip
+ chmod 777 fonts
+ chmod 777 fonts/*
  read -n 1 -s -r -p "Download Complete--Press Enter To Continue"
  bash /data/.ToolKit/tools.sh
  fi
