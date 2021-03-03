@@ -26,7 +26,7 @@ echo -e "\e[0m"
 if [ $choice = 1 ];then
 nout pm disable com.android.vending
 geco "installing L-Speed..!\n"
-nout pm install /data/.ToolKit/apks/lspeed.apk
+nout pm install /data/.ToolKit/system-tweaks/lspeed.apk
 nout pm enable com.android.vending
 read -n 1 -s -r -p "Installed L-Speed--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
