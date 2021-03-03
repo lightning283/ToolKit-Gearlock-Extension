@@ -60,7 +60,7 @@ read -p "Choose an Option : " choicewget2
 
 if [ choicewget2 = 1 ]
 then
-cd /data/.ToolKit/System-tweaks/
+cd /data/.ToolKit/system-tweaks/
 axel https://dl.dropbox.com/s/zzm6mawmllc89o5/system-tweaks.zip?dl=1
 unzip -q system-tweaks.zip
 rm -rf system-tweaks.zip
