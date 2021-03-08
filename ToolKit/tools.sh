@@ -43,7 +43,7 @@ figlet -w $(tput cols) -c "Restore"
 gecpc "@__@"; echo 
 geco "${GREEN}1.Restore Stock Web-view${RC}"
 geco "${GREEN}2.Restore Stock Framework/cursor${RC}"
-geco "${GREEN}2.Restore Stock Fonts${RC}"
+geco "${GREEN}3.Restore Stock Fonts${RC}"
 echo -e "\e[93;1m"
 read -p "choose an option : " choice
 echo -e "\e[0m"
@@ -72,9 +72,14 @@ if [ $choice = 3 ]
 then
 geco Restoring-stock-Fonts!
 rm -rf /system/fonts
-cp -R data/.ToolKit/customization/baks/stockfonts/fonts /system/
+mkdir /system/fonts
+chmod 777 /data/.ToolKit/customization/baks/stockfonts/fonts
+chmod 777 /data/.ToolKit/customization/baks/stockfonts/fonts/*
+
+
+cp /data/.ToolKit/customization/baks/stockfonts/fonts/* /system/fonts/
+chmod 777 /system/fonts
 chmod 777 /system/fonts/*
-chmod +x /system/fonts/*
 read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 reboot
 sleep 1
@@ -87,8 +92,8 @@ cp -R /data/.ToolKit/customization/baks/launchers/ch.deletescape.lawnchair.plah-
 cp -R /data/.ToolKit/customization/baks/launchers/ch.deletescape.lawnchair.plah /data/data/
 
 
-chmod 777 /data/data/ch.deletescape.lawnchair.plah/*
-chmod 777 /data/app/ch.deletescape.lawnchair.plah-1/*
+chmod 644 /data/data/ch.deletescape.lawnchair.plah/*
+chmod 644 /data/app/ch.deletescape.lawnchair.plah-1/*
 
 chmod +x /data/data/ch.deletescape.lawnchair.plah/*
 chmod +x /data/app/ch.deletescape.lawnchair.plah-1/*

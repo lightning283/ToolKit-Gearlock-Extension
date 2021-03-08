@@ -1,4 +1,12 @@
 #!/gearlock/bin/bash
+if [[ ! -f /data/.ToolKit/system-tweaks/downloded.lightz ]];then
+clear
+figlet -c ERROR
+echo -e "\e[31mERROR---> YOU HAVE NOT DOWNLOADED THE REQUIRED FILES\e[0m "
+read -n 1 -s -r -p "Download then From here----> Press Enter To Continue"
+bash /data/.ToolKit/wget.sh
+else
+
 clear; sleep 0.5
 figlet -w $(tput cols) -c "System-Tweaks"; echo
 geco "Choose the Apps you want to install\n"
@@ -18,7 +26,7 @@ echo -e "\e[0m"
 if [ $choice = 1 ];then
 nout pm disable com.android.vending
 geco "installing L-Speed..!\n"
-nout pm install /data/.ToolKit/apks/lspeed.apk
+nout pm install /data/.ToolKit/system-tweaks/lspeed.apk
 nout pm enable com.android.vending
 read -n 1 -s -r -p "Installed L-Speed--Press Enter To Continue"
 bash /data/.ToolKit/tools.sh
@@ -122,4 +130,6 @@ If it shows Privileged at the app settings.
 
 
 "
+fi
+#end of check statement
 fi

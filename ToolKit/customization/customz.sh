@@ -1,4 +1,14 @@
 #!/gearlock/bin/bash
+if [[ ! -f /data/.ToolKit/customization/downloded.lightz ]];then
+clear
+figlet -c ERROR
+echo -e "\e[31mERROR---> YOU HAVE NOT DOWNLOADED THE REQUIRED FILES\e[0m "
+read -n 1 -s -r -p "Download then From here----> Press Enter To Continue"
+bash /data/.ToolKit/wget.sh
+else
+
+
+
 
 clear; sleep 0.5;
 figlet -w $(tput cols) -c "Customization"; echo 
@@ -12,18 +22,22 @@ echo -e "\e[0m"
 
 if [ $choice = 1 ];then
 rm -rf /system/fonts
-cp -R data/.ToolKit/customization/fonts /system/
+mkdir /system/fonts
+chmod 777 /data/.ToolKit/customization/fonts
+chmod 777 /data/.ToolKit/customization/fonts/*
+
+
+cp /data/.ToolKit/customization/fonts/* /system/fonts/
+chmod 777 /system/fonts
 chmod 777 /system/fonts/*
-chmod +x /system/fonts/*
-sleep 1
+read -n 1 -s -r -p "DONE!!!------Press Enter To Continue"
 reboot
 fi
 
 if [ $choice = 2 ];then
 nout rm -rf /system/fonts/NotoColorEmoji.ttf
 nout cp /data/.ToolKit/customization/emojis-v2/NotoColorEmoji.ttf /system/fonts/
-chmod 777 /system/fonts/*
-chmod +x /system/fonts/*
+chmod 644 /system/fonts/*
 sleep 1
 reboot
 fi
@@ -41,6 +55,7 @@ fi
 #sleep 1
 #reboot
 #fi
-
+#ending of file checking if statement
+fi
 
 
