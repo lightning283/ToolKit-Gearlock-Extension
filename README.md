@@ -9,6 +9,7 @@ https://supreme-gamers.com/r/toolkit.83/
 - [ ] Add New Launchers.
 - [ ] Add Themes Options.
 - [ ] Make One exclusive Cursor.
+- [ ] Add a Cool New BootAni.
 - [ ] zip the log files and place them in Download.
 - [ ] add gui for wegt/axel menu.
 
