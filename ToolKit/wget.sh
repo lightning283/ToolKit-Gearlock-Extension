@@ -12,10 +12,9 @@ case $choice in
         echo "
 What Does This Package Have?
 1.Etch Droid
-2.GameGaurdian
-3.LuckyPatcher
-4.RootUninstaller
-5.Terminal-Emulator 
+2.LuckyPatcher
+3.RootUninstaller
+4.Terminal-Emulator 
 ";
         echo "Press '1' to Download...Press '2' to Go Back";
         read -p "Choose an Option : " choicewget;
