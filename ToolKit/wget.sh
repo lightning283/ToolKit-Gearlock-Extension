@@ -21,7 +21,7 @@ What Does This Package Have?
         case $choicewget in 
             1)
                 cd /data/.ToolKit/apks/;
-                axel https://dl.dropbox.com/s/v1dzzcr52u572a2/apks.zip?dl=1;
+                axel https://dl.dropbox.com/s/5g8qb9mrj19myh8/apks.zip?dl=1
                 unzip -q apks.zip;
                 rm -rf apks.zip;
                 touch downloded.lightz;
