@@ -4,10 +4,13 @@ if [[ ! -f /data/.ToolKit/webviewbak/webview.apk ]];then
 clear; sleep 0.2
 figlet -w $(tput cols) -c "Initializing" ; sleep 0.5 ; clear;
 mkdir /data/.ToolKit/webviewbak
+mkir -R /data/.ToolKit/customization/Theme/bak/cursor
 cp /system/priv-app/webview/webview.apk /data/.ToolKit/webviewbak/
 cp -R /system/fonts /data/.ToolKit/customization/baks/stockfonts/
 cp -R /data/app/ch.deletescape.lawnchair.plah-1 /data/.ToolKit/customization/baks/launcher/
 cp -R /data/data/ch.deletescape.lawnchair.plah /data/.ToolKit/customization/baks/launcher/
+cp -R /system/media /data/.ToolKit/Themes/bak/
+cp -R /system/framework/framework-res.apk /data/.ToolKit/customization/Theme/bak/cursor/
 fi
 clear
 gecpc Welcome
@@ -44,6 +47,7 @@ gecpc "@__@"; echo
 geco "${GREEN}1.Restore Stock Web-view${RC}"
 geco "${GREEN}2.Restore Stock Framework/cursor${RC}"
 geco "${GREEN}3.Restore Stock Fonts${RC}"
+geco "${GREEN}4.Restore Stock Theme${RC}"
 echo -e "\e[93;1m"
 read -p "choose an option : " choice
 echo -e "\e[0m"
@@ -61,8 +65,8 @@ fi
 if [ $choice = 2 ];then
 geco Restoring-stock-Framework!
 rm -rf /system/framework/framework-res.apk
-cp /data/.ToolKit/frameworkbak/framework-res.apk /system/framework/
-chmod 777 /system/framework/framework-res.apk
+cp /data/.ToolKit/customization/Theme/bak/framework/framework-res.apk /system/framework/
+chmod 644 /system/framework/framework-res.apk
 read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 reboot
 sleep 1
@@ -97,6 +101,16 @@ chmod 644 /data/app/ch.deletescape.lawnchair.plah-1/*
 
 chmod +x /data/data/ch.deletescape.lawnchair.plah/*
 chmod +x /data/app/ch.deletescape.lawnchair.plah-1/*
+chmod 644 /data/app/ch.deletescape.lawnchair.plah-1
+chmod 644 /data/app/ch.deletescape.lawnchair.plah
+
+geco Restoring-stock-BootAnimation!
+rm -rf /system/media
+cp /data/.ToolKit/Themes/bak/media /system/
+geco Restoring-stock-Cursor!
+rm -rf /system/framework/framework-res.apk
+cp /data/.ToolKit/customization/Theme/bak/framework/framework-res.apk /system/framework/
+chmod 644 /system/framework/framework-res.apk
 read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
 sleep 1
 reboot
@@ -130,6 +144,3 @@ fi
 if [ $choice = 3 ];then
 bash /data/.ToolKit/system-tweaks/sys-tweaks.sh
 fi
-
-
-
