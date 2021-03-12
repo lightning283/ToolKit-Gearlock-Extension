@@ -2,9 +2,9 @@
 
 
 function PrCr() {
-wget --progress=dot "$URL" 2>&1 |\
-grep "%" |\
-sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" | dialog --gauge "Getting packages from $URL" 7 65
+wget "$URL" 2>&1 | \
+stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
+dialog --gauge "Downloading from\n $URL" 7 60
 }
 
 	HEIGHT=13
@@ -40,10 +40,10 @@ case $choice in
             0)
                 cd /data/.ToolKit/apks/;
                 URL="https://dl.dropbox.com/s/5g8qb9mrj19myh8/apks.zip?dl=1"; PrCr
-                unzip -q apks.zip;
-                rm -rf apks.zip;
+                unzip -q apks.zip*;
+                rm -rf apks.zip*;
                 touch downloded.lightz;
-                read -n 1 -s -r -p "Download Complete--Press Enter To Continue";
+                dialog --msgbox "Download Complete--Press Enter To Continue" 7 45;
                 bash /data/.ToolKit/wget.sh
             ;;
             *)
@@ -65,8 +65,8 @@ webview may Help In app Crashes.
             0)
                 cd /data/.ToolKit/system-tweaks/;
                 URL="https://dl.dropbox.com/s/zzm6mawmllc89o5/system-tweaks.zip?dl=1"; PrCr
-                unzip -q system-tweaks.zip;
-                rm -rf system-tweaks.zip;
+                unzip -q system-tweaks.zip*;
+                rm -rf system-tweaks.zip*;
                 touch downloded.lightz;
                 dialog --msgbox "Download Complete--Press Enter To Continue" 7 45;
                 bash /data/.ToolKit/wget.sh
@@ -85,12 +85,12 @@ webview may Help In app Crashes.
             0)
                 cd /data/.ToolKit/customization/;
                 URL="https://dl.dropbox.com/s/u79c5l1wal16owq/customization.zip?dl=1"; PrCr
-                unzip -q customization.zip;
-                rm -rf customization.zip;
+                unzip -q customization.zip*;
+                rm -rf customization.zip*;
                 chmod 777 fonts;
                 chmod 777 fonts/*;
                 touch /data/.ToolKit/customization/downloded.lightz;
-                read -n 1 -s -r -p "Download Complete--Press Enter To Continue";
+                dialog --msgbox "Download Complete--Press Enter To Continue" 7 45;
                 bash /data/.ToolKit/wget.sh
             ;;
             *)
@@ -104,10 +104,10 @@ webview may Help In app Crashes.
             0)
                 cd /data/.ToolKit/game-tweaks/;
                 URL="https://dl.dropbox.com/s/czs0b7i3yca1s34/game-tweaks.zip?dl=1"; PrCr
-                unzip -q game-tweaks.zip;
-                rm -rf game-tweaks.zip;
+                unzip -q game-tweaks.zip*;
+                rm -rf game-tweaks.zip*;
                 touch downloded.lightz;
-                read -n 1 -s -r -p "Download Complete--Press Enter To Continue";
+                dialog --msgbox "Download Complete--Press Enter To Continue" 7 45;
                 bash /data/.ToolKit/wget.sh
             ;;
             *)
@@ -118,8 +118,6 @@ webview may Help In app Crashes.
     5)
         bash /data/.ToolKit/tools.sh
     ;;
-    
-    *) bash /data/.ToolKit/tools.sh;;
 esac
 
 
