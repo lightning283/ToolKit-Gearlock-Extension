@@ -1,33 +1,73 @@
 #!/gearlock/bin/bash
 
 if [[ ! -f /data/.ToolKit/webviewbak/webview.apk ]];then
-clear; sleep 0.2
-figlet -w $(tput cols) -c "Initializing" ; sleep 0.5 ; clear;
+PCT=0
+(
+while test $PCT != 105
+do
+cat <<EOF
+XXX
+$PCT
+$(figlet Initializing)
+XXX
+EOF
+PCT=`expr $PCT + 5`
+sleep 0.05
+done
+) |
+dialog --title "Backup launcher,webview and fonts" "$@" --gauge "Hi, thanks" 13 60 0; sleep 0.5
+
 mkdir /data/.ToolKit/webviewbak
-mkir -R /data/.ToolKit/customization/Theme/bak/cursor
 cp /system/priv-app/webview/webview.apk /data/.ToolKit/webviewbak/
 cp -R /system/fonts /data/.ToolKit/customization/baks/stockfonts/
 cp -R /data/app/ch.deletescape.lawnchair.plah-1 /data/.ToolKit/customization/baks/launcher/
 cp -R /data/data/ch.deletescape.lawnchair.plah /data/.ToolKit/customization/baks/launcher/
-cp -R /system/media /data/.ToolKit/Themes/bak/
-cp -R /system/framework/framework-res.apk /data/.ToolKit/customization/Theme/bak/cursor/
 fi
-clear
-gecpc Welcome
-figlet -w $(tput cols) -c "ToolKit"
-gecpc "TooLKit"; echo 
-geco "${GREEN}1.Game-Tweaks${RC}"
-geco "${GREEN}2.Essential-Apks${RC}"
-geco "${GREEN}3.System-Tweaking-Apks${RC}"
-geco "${GREEN}4.Customization${RC}"
-geco "${GREEN}5.Restore${RC}"
-geco "${GREEN}6.FileManager-(Terminal)${RC}"
-geco "${GREEN}7.Get-Logs(Logcat.lsmod..)${RC}"
-geco "${GREEN}8.Install-packages${RC}"
-geco "${RED}9.exit??${RC}"
-echo -e "\e[93;1m"
-read -p "choose an option : " choice
-echo -e "\e[0m"
+
+PCT=0
+(
+while test $PCT != 105
+do
+cat <<EOF
+XXX
+$PCT
+$(figlet ToolKit) 
+XXX
+EOF
+PCT=`expr $PCT + 5`
+sleep 0.05
+done
+) |
+
+dialog --title "Loading " "$@" --gauge "Hi, thanks" 12 45 0; sleep 0.5
+
+
+
+	HEIGHT=20
+	WIDTH=60
+	CHOICE_HEIGHT=23
+	BACKTITLE=$(gecpc "By SupremeGamers" "_")
+	TITLE="Toolkit"
+	MENU="Choose an option"
+	
+	OPTIONS=(1 "Game-Tweaks"
+2 "Essential-Apks"
+3 "System-Tweaking-Apks"
+4 "Customization"
+5 "Restore"
+6 "FileManager-(Terminal)"
+7 "Get-Logs(Logcat.lsmod..)"
+8 "Install-packages"
+9 "exit??")
+
+	choice=$(dialog --clear --cancel-label "Exit" \
+	                --backtitle "$BACKTITLE" \
+	                --title "$TITLE" \
+	                --menu "$MENU" \
+	                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+	                "${OPTIONS[@]}" \
+	                2>&1 >/dev/tty)
+                  
 if [ $choice = 1 ]; then
 bash /data/.ToolKit/game-tweaks/whichgame.sh
 fi
