@@ -1,6 +1,17 @@
 #!/gearlock/bin/bash
 
-if [[ ! -f /data/.ToolKit/webviewbak/webview.apk ]];then
+function Selector() {
+	choice=$(dialog --clear --cancel-label "Exit" \
+	                --backtitle "$BACKTITLE" \
+	                --title "$TITLE" \
+	                --menu "$MENU" \
+	                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+	                "${OPTIONS[@]}" \
+	                2>&1 >/dev/tty)
+					
+}
+
+function Loader() {
 PCT=0
 (
 while test $PCT != 105
@@ -8,14 +19,20 @@ do
 cat <<EOF
 XXX
 $PCT
-$(figlet Initializing)
+$(figlet -w $(tput cols) -c "$figtext") 
 XXX
 EOF
 PCT=`expr $PCT + 5`
 sleep 0.05
 done
 ) |
-dialog --title "Backup launcher,webview and fonts" "$@" --gauge "Hi, thanks" 13 60 0; sleep 0.5
+dialog --title "$title" "$@" --gauge "gg" 10 $WIDTH 0; sleep 0.5
+}
+
+if [[ ! -f /data/.ToolKit/webviewbak/webview.apk ]];then
+
+figtext=Initialization; title="Backup current launcher, webview and fonts"; WIDTH=65; Loader 
+
 
 mkdir /data/.ToolKit/webviewbak
 cp /system/priv-app/webview/webview.apk /data/.ToolKit/webviewbak/
@@ -24,28 +41,15 @@ cp -R /data/app/ch.deletescape.lawnchair.plah-1 /data/.ToolKit/customization/bak
 cp -R /data/data/ch.deletescape.lawnchair.plah /data/.ToolKit/customization/baks/launcher/
 fi
 
-PCT=0
-(
-while test $PCT != 105
-do
-cat <<EOF
-XXX
-$PCT
-$(figlet ToolKit) 
-XXX
-EOF
-PCT=`expr $PCT + 5`
-sleep 0.05
-done
-) |
-
-dialog --title "Loading " "$@" --gauge "Hi, thanks" 12 45 0; sleep 0.5
 
 
 
-	HEIGHT=20
-	WIDTH=60
-	CHOICE_HEIGHT=23
+
+figtext="TOOIKIT"; title="Loading toolkit by Lightning"; WIDTH=40; Loader 
+
+	HEIGHT=17
+	WIDTH=50
+	CHOICE_HEIGHT=15
 	BACKTITLE=$(gecpc "By SupremeGamers" "_")
 	TITLE="Toolkit"
 	MENU="Choose an option"
@@ -55,61 +59,60 @@ dialog --title "Loading " "$@" --gauge "Hi, thanks" 12 45 0; sleep 0.5
 3 "System-Tweaking-Apks"
 4 "Customization"
 5 "Restore"
-6 "FileManager-(Terminal)"
+6 "Midnight Commander"
 7 "Get-Logs(Logcat.lsmod..)"
-8 "Install-packages"
-9 "exit??")
+8 "Install-packages")
 
-	choice=$(dialog --clear --cancel-label "Exit" \
-	                --backtitle "$BACKTITLE" \
-	                --title "$TITLE" \
-	                --menu "$MENU" \
-	                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-	                "${OPTIONS[@]}" \
-	                2>&1 >/dev/tty)
-                  
+Selector
+	
 if [ $choice = 1 ]; then
 bash /data/.ToolKit/game-tweaks/whichgame.sh
 fi
+
 if [ $choice = 2 ];
 then
 bash /data/.ToolKit/apks/apk-install.sh
 fi
+
 if [ $choice = 4 ];
 then
 bash /data/.ToolKit/customization/customz.sh
 fi
+
 if [ $choice = 5 ];then
-clear
-gecpc "TOOlKIT"
-figlet -w $(tput cols) -c "Restore"
-gecpc "@__@"; echo 
-geco "${GREEN}1.Restore Stock Web-view${RC}"
-geco "${GREEN}2.Restore Stock Framework/cursor${RC}"
-geco "${GREEN}3.Restore Stock Fonts${RC}"
-geco "${GREEN}4.Restore Stock Theme${RC}"
-echo -e "\e[93;1m"
-read -p "choose an option : " choice
-echo -e "\e[0m"
+figtext="TOOIKIT"; title="Preparing restore function"; WIDTH=40; Loader 
+
+	HEIGHT=12
+	WIDTH=45
+	CHOICE_HEIGHT=9
+	BACKTITLE=$(gecpc "By SupremeGamers" "_")
+	TITLE="Toolkit"
+	MENU="Choose what you want to restore"
+
+	OPTIONS=( 1 "Restore Stock Web-view"
+	2 "Restore Stock Framework/cursor"
+	3 "Restore Stock Fonts")
+	
+	Selector
+   
 
 if [ $choice = 1 ];then
 geco "Restoring-stock-webview..!"
 rm -rf /system/priv-app/webview/webview.apk
 cp /data/.ToolKit/webviewbak/webview.apk /system/priv-app/webview/
 chmod 777 /system/priv-app/webview/webview.apk
-read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
-sleep 1
-reboot
+dialog --msgbox "Restore Complete!!--Press Enter To Continue" 7 45
+stop; start
 fi
 
 if [ $choice = 2 ];then
 geco Restoring-stock-Framework!
 rm -rf /system/framework/framework-res.apk
-cp /data/.ToolKit/customization/Theme/bak/framework/framework-res.apk /system/framework/
-chmod 644 /system/framework/framework-res.apk
-read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
-reboot
-sleep 1
+cp /data/.ToolKit/frameworkbak/framework-res.apk /system/framework/
+chmod 777 /system/framework/framework-res.apk
+dialog --msgbox "Restore Complete!!--Press Enter To Continue" 7 45
+stop; start
+
 fi
 
 if [ $choice = 3 ]
@@ -124,9 +127,8 @@ chmod 777 /data/.ToolKit/customization/baks/stockfonts/fonts/*
 cp /data/.ToolKit/customization/baks/stockfonts/fonts/* /system/fonts/
 chmod 777 /system/fonts
 chmod 777 /system/fonts/*
-read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
-reboot
-sleep 1
+dialog --msgbox "Restore Complete!!--Press Enter To Continue" 7 45
+stop; start
 fi
 
 if [ $choice = 4 ];then
@@ -141,26 +143,14 @@ chmod 644 /data/app/ch.deletescape.lawnchair.plah-1/*
 
 chmod +x /data/data/ch.deletescape.lawnchair.plah/*
 chmod +x /data/app/ch.deletescape.lawnchair.plah-1/*
-chmod 644 /data/app/ch.deletescape.lawnchair.plah-1
-chmod 644 /data/app/ch.deletescape.lawnchair.plah
-
-geco Restoring-stock-BootAnimation!
-rm -rf /system/media
-cp /data/.ToolKit/Themes/bak/media /system/
-geco Restoring-stock-Cursor!
-rm -rf /system/framework/framework-res.apk
-cp /data/.ToolKit/customization/Theme/bak/framework/framework-res.apk /system/framework/
-chmod 644 /system/framework/framework-res.apk
-read -n 1 -s -r -p "Restore Complete!!--Press Enter To Continue"
-sleep 1
-reboot
+dialog --msgbox "Restore Complete!!--Press Enter To Continue" 7 45
+stop; start
 fi
 # End of choice = 5 statement 
 fi
 
 if [ $choice = 6 ];then
-read -n 1 -s -r -p "To Exit FileManager Press F10 (Press Enter To Continue)"
-mc
+dialog --msgbox "To Exit FileManager Press F10 (Press Enter To Continue)" 7 45; mc
 fi
 
 if [ $choice = 7 ];then
@@ -170,17 +160,17 @@ nout mkdir /data/Logs
 timeout 4 logcat > data/Logs/Logcat.txt
 lsmod > /data/Logs/lsmod.txt
 dmesg > /data/Logs/dmesg.txt
-read -n 1 -s -r -p "Finished collecting logs..(Press Enter To Continue)"
+dialog --msgbox "Finished collecting logs..(Press Enter To Continue)" 7 45
 fi
 
 if [ $choice = 8 ];then
 bash /data/.ToolKit/wget.sh
 fi
 
-if [ $choice = 9 ];then
-exit 69 
-fi
 
 if [ $choice = 3 ];then
 bash /data/.ToolKit/system-tweaks/sys-tweaks.sh
 fi
+
+
+
