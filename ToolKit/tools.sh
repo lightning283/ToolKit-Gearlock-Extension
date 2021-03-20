@@ -1,2 +1,9 @@
+
 #!/gearlock/bin/bash 
-$GHOME/extensions/Run_ToolKit 
+if [ -d "/system/ghome" ] 
+then
+    bash /system/ghome/extensions/Run_ToolKit  
+else
+    bash /data/ghome/extensions/Run_ToolKit     
+fi
+
