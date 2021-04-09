@@ -14,4 +14,4 @@ https://supreme-gamers.com/r/toolkit.83/
 - [x] add gui for wegt/axel menu.
 
 # Authors
-N-narendra aka Ghost and LIGHTNING283
+N-narendra aka Ghost , Xtr and LIGHTNING283
