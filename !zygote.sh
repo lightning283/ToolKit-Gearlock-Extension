@@ -1,19 +1,19 @@
 #######################################################################################################
 #####=============================== Package/Extension Information ===============================#####
 
-NAME="ToolKit" #Package/Extension Name
+NAME="ToolKit"
 
-CODENAME="Run_ToolKit" #An Unique codename
+CODENAME="Run_ToolKit"
 
-TYPE="Extension" #Specify (Package / Extension)
+TYPE="Extension"
 
-AUTHOR="LIGHTNING,Ghost" #Your name as the Developer/Owner/Packer
+AUTHOR="LIGHTNING,Ghost,xtr"
 
-VERSION="2.0" #Specify the Version of this package/extension
+VERSION="3.0" 
 
-SHORTDESC="Has some Pubgm-tweak-tools and also some tewaks for app/game crashes.." #Provide a short description about this package/extension
+SHORTDESC="Has some Pubgm-tweak-tools and also some tewaks for app/game crashes.." 
 
-C_EXTNAME="Run_ToolKit" #For Specifing a custom name for your extension script ($NAME is used if not defined)
+C_EXTNAME="Run_ToolKit"
 
 #####=============================== Package/Extension Information ===============================#####
 #######################################################################################################
