@@ -1,26 +1,40 @@
 #!/gearlock/bin/bash
 
 if [[ ! -f /data/.ToolKit/game-tweaks/downloded.lightz ]];then
-clear
-figlet -c ERROR
-echo -e "\e[31mERROR---> YOU HAVE NOT DOWNLOADED THE REQUIRED FILES\e[0m "
-read -n 1 -s -r -p "Download then From here----> Press Enter To Continue"
-bash /data/.ToolKit/wget.sh
+dialog --msgbox "ERROR You Have Not Downloaded Required Files.. Press Ok To Download." 10 40
+case $? in
+0)bash /data/.ToolKit/wget.sh;;
+esac
 else
 
 
-clear; sleep 0.5;
-figlet -w $(tput cols) -c "GAME-TWEAKS"; echo 
-geco "${GREEN}1.PUBGM?${RC}"
-geco "${GREEN}2.---${RC}"
-read -p "choose an option : " choice
-if [ $choice = 1 ];then
-bash /data/.ToolKit/game-tweaks/pubgm-tweaks.sh
-fi
-if [ $choice = 2 ];then
-geco "${RED}This is still under development${RC}\n"
-read -n 1 -s -r -p "Press Enter To Continue"
-bash /data/.ToolKit/game-tweaks/whichgame.sh
-fi
+    HEIGHT=13
+    WIDTH=45
+    CHOICE_HEIGHT=10
+    BACKTITLE=$(gecpc "By SupremeGamers" "+")
+    TITLE="Choose Game"
+    MENU="Available Options"
+
+    OPTIONS=(1 "Pubg-Mobile"
+             2 "Cod-Mobile")
+
+    CHOICE=$(dialog --clear --cancel-label "Exit" \
+                    --backtitle "$BACKTITLE" \
+                    --title "$TITLE" \
+                    --menu "$MENU" \
+                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                    "${OPTIONS[@]}" \
+                    2>&1 >/dev/tty)
+
+    case $CHOICE in
+        1)bash /data/.ToolKit/game-tweaks/pubgm-tweaks.sh;;
+        2)dialog --msgbox "Still Under Development!" 10 40
+        case $? in
+            0)bash /data/.ToolKit/game-tweaks/whichgame.sh;;
+        esac
+        ;;
+        *)bash /data/.ToolKit/game-tweaks/whichgame.sh
+        ;;
+    esac 
 
 fi
