@@ -11,7 +11,7 @@ https://supreme-gamers.com/r/toolkit.83/
 - [ ] Make One exclusive Cursor.
 - [ ] Add a Cool New BootAni.
 - [ ] zip the log files and place them in Download.
-- [ ] add gui for wegt/axel menu.
+- [x] add gui for wegt/axel menu.
 
 # Authors
 N-narendra aka Ghost and LIGHTNING283
