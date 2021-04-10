@@ -2,7 +2,7 @@
 
 
 function PrCr() {
-wget "$URL" 2>&1 | \
+/gearlock/bin/wget "$URL" 2>&1 | \
 stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
 dialog --gauge "Downloading from\n $URL" 7 60
 }
