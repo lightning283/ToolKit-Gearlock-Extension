@@ -8,7 +8,7 @@ filesdir="/data/.ToolKit"
 mkdir "$filesdir"
 cp $BD/ToolKit/tools "$filesdir2/" -R
 cp $BD/ToolKit/* "$filesdir/" -R
-######################################
+#######################################
 chmod 777 /system/bin/tools
 chmod +x /system/bin/tools
 geco "\n${RED}Done!!${RC}"
