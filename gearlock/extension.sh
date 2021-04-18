@@ -61,7 +61,8 @@ figtext="TOOIKIT"; title="Loading toolkit by Lightning"; WIDTH=40; Loader
 5 "Restore"
 6 "Midnight Commander"
 7 "Get-Logs(Logcat.lsmod..)"
-8 "Install-packages")
+8 "Install-packages"
+9 "Fx-fstab")
 
 Selector
 	
@@ -167,6 +168,9 @@ if [ $choice = 8 ];then
 bash /data/.ToolKit/wget.sh
 fi
 
+if [ $choice = 9 ];then
+bash /data/.ToolKit/erzaTweaks/fxStab.sh
+fi
 
 if [ $choice = 3 ];then
 bash /data/.ToolKit/system-tweaks/sys-tweaks.sh
