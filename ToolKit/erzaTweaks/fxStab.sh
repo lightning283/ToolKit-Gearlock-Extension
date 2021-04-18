@@ -4,6 +4,7 @@
 
 #echo "$(echo "$disks" 2>/dev/null | nl -s ") " | cut -d . -f1 )"
 
+clear
 echo "Warning: Theres a small chance that automount might damage files!!"
 echo "So choose wisely what you want to mount."
 echo "Press any key to continue"
