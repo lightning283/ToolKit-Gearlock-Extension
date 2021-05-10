@@ -1,6 +1,6 @@
 get_base_dir
 geco "\n${GREEN}This could help in some app crashes and there are some essential apps too!${RC}"
-geco "\n${BLUE}Installing TooLKit by ${RED}Lightning!,${RED}Ghost! And ${RED}xtr!${RC}"
+geco "\n${BLUE}Installing TooLKit by ${RED}Lightning,${RED}Ghost!${RC} And ${RED}xtr!${RC}"
 geco "\n${PURPLE}This extension can be access by typing 'tools' in terminal too...${RC}"
 
 filesdir2="/system/bin"
@@ -11,4 +11,3 @@ cp $BD/ToolKit/* "$filesdir/" -R
 #######################################
 chmod 777 /system/bin/tools
 chmod +x /system/bin/tools
-geco "\n${RED}Done!!${RC}"
