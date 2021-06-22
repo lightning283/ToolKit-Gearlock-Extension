@@ -1,62 +1,28 @@
-#blkid | grep -E "ntfs|vfat" | grep -oE "/dev/block/sd[a-z][0-9]+"
+#!/system/bin/sh
+FS="ntfs|vfat" #Names of fs separed by "|"
+LIST=""
+IFS=";"
+count=0
 
-#echo "$(blkid | grep -E "ntfs|vfat" | grep -oE "/dev/block/sd[a-z][0-9]+" 2>/dev/null | nl -s ") " | cut -d . -f1 )"
+table=$(blkid | grep -E "$FS" | grep -oE "^[^:]+" | sed 's|/dev/block/||g' | tr '\n' ';') #Get block devices filtered by FS
 
-#echo "$(echo "$disks" 2>/dev/null | nl -s ") " | cut -d . -f1 )"
-
-clear
-echo "Warning: Theres a small chance that automount might damage files!!"
-echo "So choose wisely what you want to mount."
-echo "Press any key to continue"
-
-read -n1
-
-disks=$(blkid | grep -oE "sd[a-z][0-9]+")
-
-
-index=2
-while true
+for disk in $table #Generate dialog list
 do
-    clear
-    count=0
-    for disk in $(echo $disks)
-    do
-        count=$(($count+1))
-        [ "$index" = "$count" ] && this="#" || this=" "
-        if [ -e "/data/fx-fstab" ]
-        then
-            grep "$disk" /data/fx-fstab>/dev/null && echo "$count) $this $disk [0]" || echo "$count) $this $disk [ ]"
-        else
-            echo "$count) $this $disk [ ]"
-            disk[$count]="false"
-        fi
-    done
-    echo "Press a/z key for up and down"
-    echo "Press x key for toggle"
-    echo "Press q key for exit"
-    read -n1 inp
-    [ "$inp" = "a" ] && [ "$index" -gt "1" ] && index=$(($index-1))
-    [ "$inp" = "A" ] && [ "$index" -gt "1" ] && index=$(($index-1))
-    [ "$inp" = "z" ] && [ "$index" -lt "$count" ] && index=$(($index+1))
-    [ "$inp" = "Z" ] && [ "$index" -lt "$count" ] && index=$(($index+1))
-    [ "$inp" = "q" ] && break
-    [ "$inp" = "Q" ] && break
-    if [ "$inp" = "x" ] || [ "$inp" = "X" ]
-    then
-        count=0
-        [ -e "/data/fx-fstab.tmp" ] && rm "/data/fx-fstab.tmp"
-        for disk in $(echo $disks)
-        do
-            count=$(($count+1))
-            #[ -e "/data/fx-fstab" ] && grep "$disk" /data/fx-fstab>/dev/null && echo "$disk">>"/data/fx-fstab.tmp"
-            if [ "$index" = "$count" ]
-            then
-	        [ -e "/data/fx-fstab" ] && grep "$disk" /data/fx-fstab>/dev/null || echo "$disk">>"/data/fx-fstab.tmp"
-	    else
-	        [ -e "/data/fx-fstab" ] && grep "$disk" /data/fx-fstab>/dev/null && echo "$disk">>"/data/fx-fstab.tmp"
-	    fi
-        done
-        rm "/data/fx-fstab"
-        mv "/data/fx-fstab.tmp" "/data/fx-fstab"
-    fi
+  count=$((count+1))
+  grep "$disk" /data/fx-fstab>/dev/null && LIST="$LIST $count $disk on " || LIST="$LIST $count $disk off "
 done
+
+eval dialog --separate-output --checklist \"Toggle automount\" 0 0 0  $LIST 2> /data/local/tmp/fx-fstab.tmp || exit 0 #Exit on cancel
+
+
+touch /data/fx-fstab
+rm /data/fx-fstab
+
+count=0
+for disk in $table #Parse dialog output to fx-fstab
+do
+  count=$((count+1))
+  grep -E "^$count$" /data/local/tmp/fx-fstab.tmp>/dev/null && echo $disk>>/data/fx-fstab
+done
+
+dialog --yesno "This needs reboot. Do you want to?" 0 0 && reboot
