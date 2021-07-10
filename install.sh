@@ -1,6 +1,6 @@
 get_base_dir
 geco "\n${GREEN}This could help in some app crashes and there are some essential apps too!${RC}"
-geco "\n${BLUE}Installing TooLKit Thanks To ${RED}Lightning,${RED}Ghost!${RC} And ${RED}xtr!${RC}"
+geco "\n${BLUE}Installing TooLKit Thanks To ${RC}Lightning, Ghost! And xtr!"
 geco "\n${PURPLE}This extension can be access by typing 'tools' in terminal too...${RC}"
 
 filesdir2="/system/bin"
