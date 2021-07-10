@@ -7,7 +7,7 @@ CODENAME="Toolkit"
 
 TYPE="Extension"
 
-AUTHOR="LIGHTNING,Ghost,xtr"
+AUTHOR="LIGHTNING,Ghost,xtr,erza"
 
 VERSION="3.0" 
 
