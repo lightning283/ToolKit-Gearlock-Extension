@@ -39,7 +39,10 @@ case $choice in
         case $? in 
             0)
                 cd /data/.ToolKit/apks/;
-                URL="https://dl.dropbox.com/s/5g8qb9mrj19myh8/apks.zip?dl=1"; PrCr
+                URL="https://dl.dropbox.com/s/5g8qb9mrj19myh8/apks.zip"
+                /gearlock/bin/wget  "$URL" --no-check-certificate 2>&1 | \
+                stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
+                dialog --gauge "Downloading Essentials Apks Pack.." 10 100;
                 unzip -q apks.zip*;
                 rm -rf apks.zip*;
                 touch downloded.lightz;
@@ -64,7 +67,10 @@ webview may Help In app Crashes.
         case $? in 
             0)
                 cd /data/.ToolKit/system-tweaks/;
-                URL="https://dl.dropbox.com/s/zzm6mawmllc89o5/system-tweaks.zip?dl=1"; PrCr
+                URL="https://dl.dropbox.com/s/zzm6mawmllc89o5/system-tweaks.zip"
+                /gearlock/bin/wget "$URL" --no-check-certificate 2>&1 | \
+                stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
+                dialog --gauge "Downloading System tweaks Pack.." 10 100;
                 unzip -q system-tweaks.zip*;
                 rm -rf system-tweaks.zip*;
                 touch downloded.lightz;
@@ -84,7 +90,10 @@ webview may Help In app Crashes.
         case $? in 
             0)
                 cd /data/.ToolKit/customization/;
-                URL="https://dl.dropbox.com/s/u79c5l1wal16owq/customization.zip?dl=1"; PrCr
+                URL="https://dl.dropbox.com/s/u79c5l1wal16owq/customization.zip"
+                /gearlock/bin/wget "$URL" --no-check-certificate 2>&1 | \
+                stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
+                dialog --gauge "Downloading Customization Pack.." 10 100;
                 unzip -q customization.zip*;
                 rm -rf customization.zip*;
                 chmod 777 fonts;
@@ -103,7 +112,10 @@ webview may Help In app Crashes.
         case $? in 
             0)
                 cd /data/.ToolKit/game-tweaks/;
-                URL="https://dl.dropbox.com/s/czs0b7i3yca1s34/game-tweaks.zip?dl=1"; PrCr
+                URL="https://dl.dropbox.com/s/czs0b7i3yca1s34/game-tweaks.zip"
+                /gearlock/bin/wget "$URL" --no-check-certificate 2>&1 | \
+                stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
+                dialog --gauge "Downloading Pubgm fix Pack.." 10 100;
                 unzip -q game-tweaks.zip*;
                 rm -rf game-tweaks.zip*;
                 touch downloded.lightz;
