@@ -3,7 +3,7 @@
 
 NAME="ToolKit"
 
-CODENAME="ToolKit"
+CODENAME="Toolkit"
 
 TYPE="Extension"
 
@@ -13,7 +13,7 @@ VERSION="3.0"
 
 SHORTDESC="Has some Pubgm-tweak-tools and also some tewaks for app/game crashes.." 
 
-C_EXTNAME="ToolKit"
+C_EXTNAME="Toolkit"
 
 #####=============================== Package/Extension Information ===============================#####
 #######################################################################################################
