@@ -3,8 +3,7 @@ com_p_cfix() {
     
 	cfix=(1 "BinaryCache Method"
     2 "webview_data.lock Method"
-    3 "Install\
-    Darkmatter 4.6 webview")
+    3 "Install Darkmatter 4.6 webview")
 
     HEIGHT=10
 	WIDTH=45

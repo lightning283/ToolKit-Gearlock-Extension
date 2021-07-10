@@ -1,9 +1,8 @@
-
 #!/gearlock/bin/bash 
 if [ -d "/system/ghome" ] 
 then
-    bash /system/ghome/extensions/Run_ToolKit  
+    bash /system/ghome/extensions/Toolkit
 else
-    bash /data/ghome/extensions/Run_ToolKit     
+    bash /data/ghome/extensions/Toolkit     
 fi
 
